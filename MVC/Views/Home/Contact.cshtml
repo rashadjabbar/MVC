@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_HomeMasterPage.cshtml";
+}
+@using MVC.Models;
+@model List<Contact>
+
+
+<section class="breadcrumb-area breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb-content text-center">
+                    <h2>contact <span>info</span></h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">pages</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-area pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="contact-map"></div>
+            </div>
+            <div class="col-lg-6 pl-45">
+                <div class="section-title title-style-three mb-20">
+                    <h2>CONTACT US ABOUT <span>PRESS</span></h2>
+                </div>
+                <div class="contact-info-list mb-40">
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>Walking Park, Los Angeles, Brockland, USA</li>
+                        <li><i class="fas fa-envelope"></i><a href="https://themebeyond.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="51383f373e11323d3e24297f323e3c">[email&#160;protected]</a></li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form action="~/Home/Contact" method="post">
+                        <textarea name="message" id="message" placeholder="Write Message..."></textarea>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="name" name="name" placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" id="email" name="email" placeholder="Your Mail">
+                            </div>
+                        </div>
+                        <button type="submit">SUBMIT MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="brand-area lite-gray-bg pb-170 pt-120">
+    <div class="container">
+        <div class="row brand-active">
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo01.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo02.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo03.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo04.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo05.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo06.png" alt="">
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <div class="brand-item">
+                    <img src="~/Content/img/brand/brand_logo03.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Kontent";
+    Layout = "~/Views/Shared/_AdminPanelMasterPage.cshtml";
+}
+@using MVC.Models;
+@model List<Mehsullar>
+<!-- Button trigger modal -->
+<button type="button" id="elaveet" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-bottom: 20px">
+    Əlavə et
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">Məhsul formu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @* content *@
+            <div class="modal-body" style="padding: 20px; background: #ae6af5">
+
+                <form action="~/AdminPanel/Store" method="post" enctype="multipart/form-data" >
+                    <input type="hidden" name="MehsulId" id="mehsulid" />
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" name="MehsulShekil" required>
+                        <label class="custom-file-label" for="customFile">Məhsulun şəkli</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="MehsulAd" placeholder="Məhsul adı" name="MehsulAd" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="MehsulQiymet" placeholder="Məhsulun qiyməti" name="MehsulQiymet" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bağla</button>
+                        <button type="submit" class="btn btn-primary">Yadda Saxla</button>
+                    </div>
+                </form>
+
+            </div>
+            @* content *@
+
+
+        </div>
+    </div>
+</div>
+<table class="table" style="background: white;" id="table">
+    <thead style="font-weight: bold;">
+        <tr>
+            <th style="text-align: center; display: none" scope="col">SQLID#</th>
+            <th style="text-align: center;" scope="col">ID#</th>
+            <th style="text-align: center;" scope="col">Məhsulun şəkli</th>
+            <th style="text-align: center;" scope="col">Məhsulun adı</th>
+            <th style="text-align: center;" scope="col">Məhsulun qiyməti</th>
+            <th style="text-align: center;" scope="col">Düzəlt/Sil</th>
+        </tr>
+    </thead>
+    <tbody style="text-align: center;">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="display: none">@item.MehsulId</td>
+                <td>@(Model.IndexOf(item)+1)</td>
+                <td>@item.MehsulShekil</td>
+                <td id="mehsuladtd">@item.MehsulAd</td>
+                <td id="mehsulqiymettd">@item.MehsulQiymet</td>
+                <td>
+                    <div style="display: flex; justify-content: space-around;">
+                        <div data-bs-toggle="modal" data-bs-target="#myModal" style="cursor: pointer; color: rebeccapurple" ><i class="fas fa-edit"></i></div>
+                        <a href="~/AdminPanel/DeleteRow/@item.MehsulId"> <div><i class="fas fa-trash"></i></div></a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+
